@@ -24,12 +24,12 @@ jobs:
           pip install pygame-ce pyinstaller
       - name: Build executable
         run: |
-          if [ "${{ runner.os }}" = "Windows" ]; then \
-            pyinstaller --onefile --windowed --add-data "flappy-bird-assets;flappy-bird-assets" main.py; \
-          elif [ "${{ runner.os }}" = "Linux" ]; then \
-            pyinstaller --onefile --windowed --add-data "flappy-bird-assets:flappy-bird-assets" main.py; \
-          else \
-            pyinstaller --onefile --windowed --add-data "flappy-bird-assets:flappy-bird-assets" main.py; \
+          if [ "${{ runner.os }}" = "macOS" ]; then
+            pyinstaller --windowed --add-data "flappy-bird-assets:flappy-bird-assets" main.py
+          elif [ "${{ runner.os }}" = "Windows" ]; then
+            pyinstaller --onefile --windowed --add-data "flappy-bird-assets;flappy-bird-assets" main.py
+          else
+            pyinstaller --onefile --windowed --add-data "flappy-bird-assets:flappy-bird-assets" main.py
           fi
       - name: Upload artifact
         uses: actions/upload-artifact@v4
