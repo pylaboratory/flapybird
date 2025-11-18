@@ -24,7 +24,7 @@ flap_strength = -10
 
 # Pipe properties
 pipe_width = 80
-pipe_gap = 200
+pipe_gap = 300
 pipe_x = WIDTH
 import random
 pipe_top_height = random.randint(50, HEIGHT - pipe_gap - 50)
